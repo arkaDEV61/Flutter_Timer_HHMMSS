@@ -110,10 +110,10 @@ class MyHomePageState extends State<MyHomePage> {
     timer = Timer.periodic(Duration(seconds: 1), (timer) {
       setState(() {
         if (totalSeconds > 0) {
-          totalSeconds = totalSeconds-1;
+          totalSeconds = totalSeconds - 1;
           currentHours = totalSeconds~/3600;
           currentMinutes = (totalSeconds-(currentHours*3600))~/60;
-          currentSeconds = totalSeconds - ((hours*3600)+(minutes*60));
+          currentSeconds = totalSeconds - ((currentHours*3600)+(currentMinutes*60));
         } else {
           timer.cancel();
           //submit();
